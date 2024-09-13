@@ -1,28 +1,13 @@
 version: 0.2
-
 phases:
-  install:
-    commands:
-      - echo "Install phase - setting up environment"
-      - apt-get update -y
-      - apt-get install -y maven
-
-  pre_build:
-    commands:
-      - echo "Pre-build phase - preparing environment"
-      - mvn clean
-
   build:
     commands:
-      - echo "Build phase - compiling Java code"
-      - mvn package -DskipTests
-
+      - echo Packaging JAR file...
+      - mvn clean package
   post_build:
     commands:
-      - echo "Post-build phase - preparing artifact"
-      - ls target/
-      - mv target/*.jar CRUD-Employee_Backend.jar
-
+      - echo Build complete.
 artifacts:
   files:
-    - CRUD-Employee_Backend.jar
+    - target/CRUD-Employee_Backend.jar
+  discard-paths: yes
