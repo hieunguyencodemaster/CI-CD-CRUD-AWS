@@ -9,5 +9,5 @@ phases:
       - echo Build complete.
 artifacts:
   files:
-    - target/CRUD-Employee_Backend.jar
+    - target/CRUD_Employee_Backend.jar
   discard-paths: yes
